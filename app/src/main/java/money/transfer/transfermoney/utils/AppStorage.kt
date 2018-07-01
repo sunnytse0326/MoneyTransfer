@@ -8,7 +8,7 @@ class AppStorage{
             return if (Memory.getStringData(TOKEN) != null) Memory.getStringData(TOKEN) else null
         }
 
-        fun setToken(token: String) {
+        fun setToken(token: String?) {
             Memory.saveData(TOKEN, token)
         }
     }

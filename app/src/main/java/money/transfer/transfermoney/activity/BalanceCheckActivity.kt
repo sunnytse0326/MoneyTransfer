@@ -6,6 +6,8 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import money.transfer.transfermoney.BuildConfig
 import money.transfer.transfermoney.R
@@ -71,5 +73,22 @@ class BalanceCheckActivity : AppCompatActivity() {
         mainUI.dialog = indeterminateProgressDialog(this.resources.getString(R.string.loading))
 
         viewModel.moneyTransfer(mainUI.homeAmountEt.text.toString(),dataEncryption.decryptData(AppStorage.getToken()?:"", BuildConfig.dataPrivate))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_logout -> {
+                AppStorage.setToken(null)
+                startActivity(Intent(this@BalanceCheckActivity, BalanceLoginActivity::class.java))
+                finish()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
     }
 }

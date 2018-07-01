@@ -10,7 +10,7 @@ import java.io.Serializable
 
 class Memory {
     companion object {
-        fun saveData(key: String, value: String) {
+        fun saveData(key: String, value: String?) {
             PreferenceManager
                     .getDefaultSharedPreferences(MoneyTransferApplication.context)
                     .edit().putString(key, value).commit()

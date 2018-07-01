@@ -10,6 +10,7 @@ import android.widget.Toast
 import money.transfer.transfermoney.R
 import money.transfer.transfermoney.uicomponent.BalanceCheckUI
 import money.transfer.transfermoney.uicomponent.BalanceLoginUI
+import money.transfer.transfermoney.utils.AppStorage
 import money.transfer.transfermoney.viewModel.BalanceCheckViewModel
 import money.transfer.transfermoney.viewModel.BalanceLoginViewModel
 import org.jetbrains.anko.indeterminateProgressDialog
@@ -22,8 +23,13 @@ class BalanceLoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initView()
-        initData()
+        if(AppStorage.getToken()?.isNotEmpty() == true){
+            startActivity(Intent(this@BalanceLoginActivity, BalanceCheckActivity::class.java))
+            finish()
+        } else{
+            initView()
+            initData()
+        }
     }
 
     private fun initData(){

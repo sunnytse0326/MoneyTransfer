@@ -64,9 +64,11 @@ MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC185u6mX6bAPkTOYdcsT8XcElzSz+o
 
 When the data is encrypted, we will send the result with post body in JSON format. After the result is obtained, it will be shown on the page.
 
-![image](https://github.com/sunnytse0326/MoneyTransfer/screenshot/screenshot1.png)
-![image](https://github.com/sunnytse0326/MoneyTransfer/screenshot/screenshot2.png)
-![image](https://github.com/sunnytse0326/MoneyTransfer/screenshot/screenshot3.png)
+<p float="left">
+  <img src="https://github.com/sunnytse0326/MoneyTransfer/blob/develop/screenshot/screenshot1.png" width="250">
+  <img src="https://github.com/sunnytse0326/MoneyTransfer/blob/develop/screenshot/screenshot2.png" width="250">
+  <img src="https://github.com/sunnytse0326/MoneyTransfer/blob/develop/screenshot/screenshot3.png" width="250">
+</p>
 
 
 

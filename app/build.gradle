@@ -8,14 +8,29 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "money.transfer.transfermoney"
-        minSdkVersion 16
+        minSdkVersion 18
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        // TODO pinPub is the cert public key which is generated with sha256 hash with base-64 encode standard
+        debug {
+            buildConfigField "String", "pinPub", "\"tlWQhja7+4LV96qCw71ZE325VzDFNgQuI0N2soN4JSo=\""
+            buildConfigField "String", "cipherStandard", "\"RSA/ECB/OAEPWITHSHA-256ANDMGF1PADDING\""
+            buildConfigField "String", "dataPublic",  "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtfObupl+mwD5EzmHXLE/F3BJc0s/qA5YaeTQJFA5EI2nsUGkiF9CrHnqKndXR3G3hkXA37BhGmimsE5ved62M+FIUv/NRTnqdqpFMZDqBGCAwzrc151f/rL82kqSly1CG8fzCnYKcsnYLSgE9JMmdc4pju/4KhmxPq404YqdGEN1agC0mH9N1N5d1GNuFBoqSBMsvqpLr3DF4481zFdE0W+UPmhr05ozu7gNA1tYoOd+2iLoOQMFbd+4skOse8gS2/gVtOUylHZJY2lPw3GUHMy62ClvYmx9APFfHwBMadlkacalLK9kGKGylkPzPJ+4OStMRsrKiRnBH0A9+D6oHwIDAQAB\""
+            buildConfigField "String", "dataPrivate",  "\"MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC185u6mX6bAPkTOYdcsT8XcElzSz+oDlhp5NAkUDkQjaexQaSIX0Kseeoqd1dHcbeGRcDfsGEaaKawTm953rYz4UhS/81FOep2qkUxkOoEYIDDOtzXnV/+svzaSpKXLUIbx/MKdgpyydgtKAT0kyZ1zimO7/gqGbE+rjThip0YQ3VqALSYf03U3l3UY24UGipIEyy+qkuvcMXjjzXMV0TRb5Q+aGvTmjO7uA0DW1ig537aIug5AwVt37iyQ6x7yBLb+BW05TKUdkljaU/DcZQczLrYKW9ibH0A8V8fAExp2WRpxqUsr2QYobKWQ/M8n7g5K0xGysqJGcEfQD34PqgfAgMBAAECggEARt04nz3N8ee4mlSzFBZSSLoqWTWK9tSTebasnCAEgZ5yG9bBkn1rdcpLubteKkyvWiPLoTNMNmFg3lTGFPR5CQ6qQO0w0M/kMdBR/6J9ijPdomvH/E/mRcgHM6uMmUV+tFw1G7NqkVdskvW9rFWtSn9/bxSmFhuIjS2DGf6G/Z4LDI2c/08DIq8ZAax9sXSbPGnMSeQz7WnjY5HBqO93b3/OnCq8qNEAjWSuzwOgSK+SHfr73cMC2YR5SfhWcJZoQbIyb3yM2dhmXGvUF6mGoU6jPV07MLypx47BySpFaOIURo8CMCgehBFAIwUpatqI21AKUFZI0a3eSdnJDNJnpQKBgQDzEAM12Ivrfgb0d1KloUWvkfgoU3BpYcqlh42rICVvVZ3hqZ7Gjz6+ESnDjO60zCd2yie0VjE5m32ZplU4XdDFP6FULRaP8kTiU3CfjBsjalgqnmxKmm1TYIs/sPboe/9PT7ltLMgYQOYYoFVjk6h3OQgIwKZhQqeq9rAv8VO+8wKBgQC/ouTC/KEsF59njOv18sJhCRHjaNv1dCEXTZjZw5PN3I1PTwYBXPQED+60TPuZPeBp+cZWmx/R9vKo1Bm8tPZ/Uj7vNVgXoTFJAWqngWzLELXrsLXC6Gx/+ViLVr9XWbhZ8sxLeGu9edkoEnP4YjuSw2Es0sHYDqjEpVcIWWV1JQKBgCIBfoF9D25eDnkLbKuxmX9Ly81QhyynOuPXyDFF6Rbfgpw8z/L1vZB39EDgqdDvsyHCfLWVTYPCxlrF06x0K649DcQqHrr66TpE9D/OKUnWKgmkaoAxhNQicLjzeEfkeT7OZ6HnnwMNqWOOowOwd+RePUqEMYLwAWdA5jt+5vmTAoGARl/IiH6DpZCLPli28lwS29Wb1xpT5GCgIlGhtx6mcavzzNMlTmzXQ4KiU14N6ymY9vH9zyIqXk3EsREq3mzKNNl8ORYq4oqUcc3uX9Mco7ngRMxhA1GdPqXPyWOy4p4VIBsUwQZY8n0DrT6Rjf5tCCltzysaeoBvo79gJbXGl20CgYB+/zqdLxkf6nxU45h2NvDHLXhabXJHhBapZ/sg5ZZ6d5B9AmMyPaspllsVTqvxBpkYH0/8MdRCa1+kNzEv+9W+IduTMRCQ+yzCtbE3gsBGcY388muJQJorKw9XO1R2lWiED0WhvMITZCBKr6wz8HRnYtRtrSK7s10PXkgmPjSYKQ==\""
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
+            buildConfigField "String", "pinPub", "\"tlWQhja7+4LV96qCw71ZE325VzDFNgQuI0N2soN4JSo=\""
+            buildConfigField "String", "cipherStandard", "\"RSA/ECB/OAEPWITHSHA-256ANDMGF1PADDING\""
+            buildConfigField "String", "dataPublic",  "\"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtfObupl+mwD5EzmHXLE/F3BJc0s/qA5YaeTQJFA5EI2nsUGkiF9CrHnqKndXR3G3hkXA37BhGmimsE5ved62M+FIUv/NRTnqdqpFMZDqBGCAwzrc151f/rL82kqSly1CG8fzCnYKcsnYLSgE9JMmdc4pju/4KhmxPq404YqdGEN1agC0mH9N1N5d1GNuFBoqSBMsvqpLr3DF4481zFdE0W+UPmhr05ozu7gNA1tYoOd+2iLoOQMFbd+4skOse8gS2/gVtOUylHZJY2lPw3GUHMy62ClvYmx9APFfHwBMadlkacalLK9kGKGylkPzPJ+4OStMRsrKiRnBH0A9+D6oHwIDAQAB\""
+            buildConfigField "String", "dataPrivate",  "\"MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC185u6mX6bAPkTOYdcsT8XcElzSz+oDlhp5NAkUDkQjaexQaSIX0Kseeoqd1dHcbeGRcDfsGEaaKawTm953rYz4UhS/81FOep2qkUxkOoEYIDDOtzXnV/+svzaSpKXLUIbx/MKdgpyydgtKAT0kyZ1zimO7/gqGbE+rjThip0YQ3VqALSYf03U3l3UY24UGipIEyy+qkuvcMXjjzXMV0TRb5Q+aGvTmjO7uA0DW1ig537aIug5AwVt37iyQ6x7yBLb+BW05TKUdkljaU/DcZQczLrYKW9ibH0A8V8fAExp2WRpxqUsr2QYobKWQ/M8n7g5K0xGysqJGcEfQD34PqgfAgMBAAECggEARt04nz3N8ee4mlSzFBZSSLoqWTWK9tSTebasnCAEgZ5yG9bBkn1rdcpLubteKkyvWiPLoTNMNmFg3lTGFPR5CQ6qQO0w0M/kMdBR/6J9ijPdomvH/E/mRcgHM6uMmUV+tFw1G7NqkVdskvW9rFWtSn9/bxSmFhuIjS2DGf6G/Z4LDI2c/08DIq8ZAax9sXSbPGnMSeQz7WnjY5HBqO93b3/OnCq8qNEAjWSuzwOgSK+SHfr73cMC2YR5SfhWcJZoQbIyb3yM2dhmXGvUF6mGoU6jPV07MLypx47BySpFaOIURo8CMCgehBFAIwUpatqI21AKUFZI0a3eSdnJDNJnpQKBgQDzEAM12Ivrfgb0d1KloUWvkfgoU3BpYcqlh42rICVvVZ3hqZ7Gjz6+ESnDjO60zCd2yie0VjE5m32ZplU4XdDFP6FULRaP8kTiU3CfjBsjalgqnmxKmm1TYIs/sPboe/9PT7ltLMgYQOYYoFVjk6h3OQgIwKZhQqeq9rAv8VO+8wKBgQC/ouTC/KEsF59njOv18sJhCRHjaNv1dCEXTZjZw5PN3I1PTwYBXPQED+60TPuZPeBp+cZWmx/R9vKo1Bm8tPZ/Uj7vNVgXoTFJAWqngWzLELXrsLXC6Gx/+ViLVr9XWbhZ8sxLeGu9edkoEnP4YjuSw2Es0sHYDqjEpVcIWWV1JQKBgCIBfoF9D25eDnkLbKuxmX9Ly81QhyynOuPXyDFF6Rbfgpw8z/L1vZB39EDgqdDvsyHCfLWVTYPCxlrF06x0K649DcQqHrr66TpE9D/OKUnWKgmkaoAxhNQicLjzeEfkeT7OZ6HnnwMNqWOOowOwd+RePUqEMYLwAWdA5jt+5vmTAoGARl/IiH6DpZCLPli28lwS29Wb1xpT5GCgIlGhtx6mcavzzNMlTmzXQ4KiU14N6ymY9vH9zyIqXk3EsREq3mzKNNl8ORYq4oqUcc3uX9Mco7ngRMxhA1GdPqXPyWOy4p4VIBsUwQZY8n0DrT6Rjf5tCCltzysaeoBvo79gJbXGl20CgYB+/zqdLxkf6nxU45h2NvDHLXhabXJHhBapZ/sg5ZZ6d5B9AmMyPaspllsVTqvxBpkYH0/8MdRCa1+kNzEv+9W+IduTMRCQ+yzCtbE3gsBGcY388muJQJorKw9XO1R2lWiED0WhvMITZCBKr6wz8HRnYtRtrSK7s10PXkgmPjSYKQ==\""
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -27,6 +42,11 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    implementation "android.arch.lifecycle:extensions:1.1.0"
+    implementation "android.arch.lifecycle:viewmodel:1.1.0"
+    implementation "org.jetbrains.anko:anko:0.10.4"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

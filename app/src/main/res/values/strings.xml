@@ -11,4 +11,12 @@
     <!-- Error Message -->
     <string name="success">Success</string>
     <string name="input_balance">Please input the balance</string>
+    <string name="input_username">Please input user name</string>
+    <string name="input_password">Please input password</string>
+
+    <!-- Login -->
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+
 </resources>

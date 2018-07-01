@@ -15,6 +15,11 @@ As we need to demonstrate how to build a high-level security application in clie
 }
 ```
 
+# Project Structure
+This project included a login page and balance-check page. We need to clarify the identification login by user, save the encrypted token and use it as an authorization communicating with server.
+
+In this application, we build the architecture by using MVVM structure with data-binding features. We use anko to build the layout and use native Http libraries for making network connections.
+
 
 # Implementation
 In this application, we mainly handled several security matters in different aspects:
@@ -65,15 +70,21 @@ MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC185u6mX6bAPkTOYdcsT8XcElzSz+o
 When the data is encrypted, we will send the result with post body in JSON format. After the result is obtained, it will be shown on the page.
 
 <p float="left">
-  <img src="https://github.com/sunnytse0326/MoneyTransfer/blob/develop/screenshot/screenshot1.png" width="250">
-  <img src="https://github.com/sunnytse0326/MoneyTransfer/blob/develop/screenshot/screenshot2.png" width="250">
-  <img src="https://github.com/sunnytse0326/MoneyTransfer/blob/develop/screenshot/screenshot3.png" width="250">
+  <img src="https://github.com/sunnytse0326/MoneyTransfer/blob/develop/screenshot/screenshot1.png" width="250" height="400">
+  <img src="https://github.com/sunnytse0326/MoneyTransfer/blob/develop/screenshot/screenshot2.png" width="250" height="400">
+  <img src="https://github.com/sunnytse0326/MoneyTransfer/blob/develop/screenshot/screenshot3.png" width="250" height="400">
 </p>
 
+## Proguard rules
+Proguard is already enabled and it is neccessary for this feature used obfuscation which makes codes difficult to decomplile.
 
 
 
-
+## Reference:
+[SSL Pinning](https://medium.com/@appmattus/android-security-ssl-pinning-1db8acb6621e)
+[Android Storing Secret Data](https://medium.com/@ericfu/securely-storing-secrets-in-an-android-application-501f030ae5a3)
+[OSWAP Android Data Storage](https://github.com/OWASP/owasp-mstg/blob/master/Document/0x05d-Testing-Data-Storage.md)
+[Proguard Rules](https://medium.com/@maheshwar.ligade/enabling-proguard-for-android-98e2b19e90a4)
 
 
 

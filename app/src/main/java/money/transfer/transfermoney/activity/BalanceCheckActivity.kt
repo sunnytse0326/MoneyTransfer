@@ -7,15 +7,21 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import money.transfer.transfermoney.BuildConfig
 import money.transfer.transfermoney.R
+import money.transfer.transfermoney.encryption.DataEncryption
 import money.transfer.transfermoney.uicomponent.BalanceCheckUI
+import money.transfer.transfermoney.utils.AppStorage
 import money.transfer.transfermoney.viewModel.BalanceCheckViewModel
+import money.transfer.transfermoney.viewModel.BalanceLoginViewModel
 import org.jetbrains.anko.indeterminateProgressDialog
 import org.jetbrains.anko.setContentView
+
 
 class BalanceCheckActivity : AppCompatActivity() {
     lateinit var mainUI: BalanceCheckUI
     lateinit var viewModel: BalanceCheckViewModel
+    var dataEncryption: DataEncryption = DataEncryption()
 
     val BALANCESTATUS = "BALANCESTATUS"
 
@@ -27,6 +33,7 @@ class BalanceCheckActivity : AppCompatActivity() {
 
     private fun initData(){
         viewModel = ViewModelProviders.of(this).get(BalanceCheckViewModel::class.java)
+
         viewModel.balanceStatus.observe(this, Observer { balanceStatus ->
             mainUI.dialog?.dismiss()
             var intent = Intent(this@BalanceCheckActivity, BalanceResultActivity::class.java)
@@ -62,6 +69,7 @@ class BalanceCheckActivity : AppCompatActivity() {
 
     private fun transferMoneyAction(){
         mainUI.dialog = indeterminateProgressDialog(this.resources.getString(R.string.loading))
-        viewModel.moneyTransfer(mainUI.homeAmountEt.text.toString())
+
+        viewModel.moneyTransfer(mainUI.homeAmountEt.text.toString(),dataEncryption.decryptData(AppStorage.getToken()?:"", BuildConfig.dataPrivate))
     }
 }

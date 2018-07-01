@@ -27,7 +27,7 @@ class NetworkRequest {
         GET, POST, PUT, DELETE
     }
 
-    fun request(url: String, method: Method, postBody: String, listener: RequestListener?) {
+    fun request(url: String, method: Method, accessToken: String?, postBody: String, listener: RequestListener?) {
         doAsync {
             try {
                 // TODO We just hardcode the method to be GET Method from POST request as github page did not allow post method
@@ -38,6 +38,7 @@ class NetworkRequest {
                 urlConnection.requestMethod = requestMethod.name
 
                 if (requestMethod == Method.POST) {
+                    urlConnection.setRequestProperty("Authorization", accessToken)
                     urlConnection.setRequestProperty("Content-Type", "application/json")
                     urlConnection.setRequestProperty("Accept", "application/json")
 

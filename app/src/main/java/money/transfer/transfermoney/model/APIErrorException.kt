@@ -4,7 +4,7 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class APIErrorException(error: Exception?, response: String?) {
-    lateinit var errorMessage: String
+    var errorMessage: String ?= ""
     private var errorCode: Int? = 0
     lateinit var errorType: Type
 

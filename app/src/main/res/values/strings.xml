@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">TransferMoney</string>
+
+    <!-- Balance Check -->
+    <string name="money_transfer">Money Transfer (HKD)</string>
+    <string name="type_amount">Type your amount here</string>
+    <string name="transfer">Transfer</string>
+    <string name="result">Result</string>
+    <string name="loading">Loading...</string>
+
+    <!-- Error Message -->
+    <string name="success">Success</string>
+    <string name="input_balance">Please input the balance</string>
 </resources>

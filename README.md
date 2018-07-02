@@ -90,18 +90,13 @@ When the data is encrypted, in transfer money page, we will send the result with
 ## Proguard rules
 Proguard is already enabled and it is neccessary for this feature used obfuscation which makes codes difficult to decomplile.
 
+# Test Case
+In this project, we added a test case for data encryption class by using Powermock and Mockito libraries. 
 
 
-## Reference:
-[SSL Pinning](https://medium.com/@appmattus/android-security-ssl-pinning-1db8acb6621e)
-[Android Storing Secret Data](https://medium.com/@ericfu/securely-storing-secrets-in-an-android-application-501f030ae5a3)
-[OSWAP Android Data Storage](https://github.com/OWASP/owasp-mstg/blob/master/Document/0x05d-Testing-Data-Storage.md)
-[Proguard Rules](https://medium.com/@maheshwar.ligade/enabling-proguard-for-android-98e2b19e90a4)
-
-
-
-
-
-
-
+# Reference:
+[SSL Pinning](https://medium.com/@appmattus/android-security-ssl-pinning-1db8acb6621e)<br>
+[Android Storing Secret Data](https://medium.com/@ericfu/securely-storing-secrets-in-an-android-application-501f030ae5a3)<br>
+[OSWAP Android Data Storage](https://github.com/OWASP/owasp-mstg/blob/master/Document/0x05d-Testing-Data-Storage.md)<br>
+[Proguard Rules](https://medium.com/@maheshwar.ligade/enabling-proguard-for-android-98e2b19e90a4)<br>
 

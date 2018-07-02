@@ -91,7 +91,7 @@ When the data is encrypted, in transfer money page, we will send the result with
 Proguard is already enabled and it is neccessary for this feature used obfuscation which makes codes difficult to decomplile.
 
 # Test Case
-In this project, we added a test case for data encryption class by using Powermock and Mockito libraries. 
+In this project, we added a test case for data encryption class by using Powermock and Mockito libraries. We used the libraries to mock and redirect the base64 decode function in test. We tried several cases in which to ensure the encrypt and decrypt flow.
 
 
 # Reference:

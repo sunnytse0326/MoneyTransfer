@@ -47,7 +47,7 @@ tlWQhja7+4LV96qCw71ZE325VzDFNgQuI0N2soN4JSo=
 /C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert SHA2 High Assurance Server CA
 k2v657xBsOVe1PQRwOsHsw3bsGT2VzIqz5K+59sNQws=
 ```
-We will use the upper one as public key and make url connections with server. As some of third party network libraries may have  vulnerabilities on certificate pinners like OKHttp order version, we prefer to use native HttpUrlConnection which will be easily to control and monitor.
+We will use the upper one as public key and make url connections with server. As some of third party network libraries may have  vulnerabilities on certificate pinners like OKHttp older version, we prefer to use native HttpUrlConnection which will be easily to control and monitor.
 <br>
 
 ## Login
